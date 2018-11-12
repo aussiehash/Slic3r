@@ -103,7 +103,8 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" OR "${CMAKE_CXX_COMPILER_ID}" STRE
     add_compile_options(-Werror=return-type)
 
     if (SLIC3R_ASAN)
-        add_compile_options(-fsanitize=address -fno-omit-frame-pointer)
+        # add_compile_options(-fsanitize=address -fno-omit-frame-pointer)
+        # add_compile_options(-faddress-sanitizer)
         if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
             set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lasan")
         endif ()
